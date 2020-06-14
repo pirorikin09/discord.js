@@ -1,0 +1,40 @@
+// Response for Uptime Robot
+const http = require('http');
+http.createServer(function(request, response)
+{
+	response.writeHead(200, {'Content-Type': 'text/plain'});
+	response.end('Discord bot is active now \n');
+}).listen(3000);
+
+// Discord bot implements
+const discord = require('discord.js');
+const client = new discord.Client();
+function getNowYMDhmsStr(){
+  const date = new Date()
+  const h = ("00" + date.getHours()).slice(-2)
+  const m = ("00" + date.getMinutes()).slice(-2)
+}
+
+client.on('ready', message =>
+{
+    console.log('bot is ready!');
+})
+
+client.on('message', message =>
+{
+    if(message.isMemberMentioned(client.user)&& message.member.voiceChannel)
+    {
+        message.reply('通話に接続しました');
+        return;}
+{
+  console.nickname('return h + '/' + m ')
+}  
+  });
+
+if(process.env.DISCORD_BOT_TOKEN == undefined)
+{
+    console.log('please set ENV: DISCORD_BOT_TOKEN');
+    process.exit(0);
+}
+
+client.login( process.env.MJP8eD1zFEAX5OoLDnB253uFrekoekVg );
